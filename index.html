@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>int222_162b28 - Assignment 3 - home page</title>
+    <script src='javascript/myscript.js' type='text/javascript'></script>
+    <link rel="stylesheet" href="css/normalize.css"   type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/sitecss.css" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div class="content">
+    <form name="application" id="application" method="post" action="https://zenit.senecac.on.ca/~emile.ohan/cgi-bin/cardApplication.cgi" onsubmit="return validateForm();">
+      <fieldset class="f1">
+        <legend><img src="https://zenit.senecac.on.ca/~emile.ohan/int222/bank-logo.png" title="bank" alt="bank" />Seneca Bank - Credit Card Application</legend>
+        <table>
+          <tr>
+          <td>  
+          <fieldset class="f2">
+            <legend>Primary Applicant's Information</legend>
+            <p>
+            <label class="PAI">
+              <a title="first">First Name<span class="reda">*</span></a>
+            </label>
+            <input type="text" name="fName" id="fName" size="20" maxlength="20" autofocus />
+            </p>
+            <p>
+            <label class="PAI">
+              <a title="last">Surname<span class="reda">*</span></a>
+            </label>
+            <input type="text" name="sName" id="sName" size="20" maxlength="30"/>
+            </p>
+            <p>
+            <label class="PAI">
+              <a title="dbt">Date of Birth<span class="reda">*</span></a>
+            </label>
+            <input type="text" name="dob" id="dob" size="10" placeholder="MMMYYYY" maxlength="7" />
+            </p>
+            <p>
+            <label class="PAI">
+              <a title="EA">Email Address<span class="reda">*</span></a>
+            </label>
+            <input type="text" name="email" id="email" size="20" maxlength="60" />
+            </p>
+            <p>
+            <label class="PAI">
+              <a title="PN">Phone No.<span class="reda">*</span></a>
+            </label>
+            <input type="text" name="phone" id="phone" size="20" maxlength="12" />
+            </p>
+            <input type="hidden" name="hName" id="hName" value="Zar" />
+            <input type="hidden" name="hId" id="hId" value="int222_162b28" />
+          </fieldset>
+          </td>
+          <td>
+          <fieldset class="f2">
+            <legend>Primary Applicant's Address</legend>
+            <table>
+              <tr>
+              <td>
+              <p class="wd1">
+              <input type="text" name="address" id="address" size="30" maxlength="60" />
+              <label>
+                <a title="AD">Home Address<span class="reda">*</span></a>
+              </label>
+              </p>
+              </td>
+              <td>
+              <p class="wd2">
+              <input type="text" name="apt" id="apt" size="5" maxlength="4" />
+              <label>
+                <a title="AP">Apt</a>
+              </label>
+              </p>
+              </td>
+              </tr>
+              <tr>
+              <td colspan="2">
+              <p class="wd2">
+              <input type="text" name="city" id="city" size="20" maxlength="40" />
+              <label class="PCI">
+                <a title="CI">City<span class="reda">*</span></a>
+              </label>
+              </p>
+              </td>
+              </tr>
+              <tr>
+              <td>
+              <p class="wd3">
+              <select id="province" name="province" size="2">
+                <optgroup label="Province">
+                  <option value="Alberta">Alberta</option>
+                  <option value="British Columbia">British Columbia</option>
+                  <option value="Manitoba">Manitoba</option>
+                  <option value="New Brunswick">New Brunswick</option>
+                  <option value="Newfoundland & Labrador">Newfoundland & Labrador</option>
+                  <option value="Nova Scotia">Nova Scotia</option>
+                  <option value="Ontario">Ontario</option>
+                  <option value="Prince Edward Island">PE</option>
+                  <option value="Quebec">Quebec</option>
+                  <option value="Saskatchewan">Saskatchewan</option>
+                </optgroup>
+                <optgroup label="Territory">
+                  <option value="Northwest Territories">Northwest Territories</option>
+                  <option value="Nunavut">Nunavut</option>
+                  <option value="Yukon">Yukon</option>
+                </optgroup>
+              </select>
+              <label>
+                <a title="prov">Province<span class="reda">*</span></a>
+              </label>
+              </p>
+              </td>
+              <td>
+              <p>
+              <input type="text" name="postal" id="postal" size="8" placeholder="ANA NAN" maxlength="7" />
+              <label>
+                <a title="PC">Postal Code<span class="reda">*</span></a>
+              </label>
+              </p>
+              </td>
+              </tr>
+            </table>
+          </fieldset>
+          </td>
+          <td>
+          <fieldset class="f3">
+            <legend>Housing Status</legend>
+            <table>
+            <tr>
+            <td>
+            <p>
+            <label>
+              <a title="DY">Do You</a>
+            </label>
+            </p>
+            <p class="wd4">
+            <input type="checkbox" name="hStatus" id="s01" value="Own" onclick="return checkbox1();" /> Own the property
+            <input type="checkbox" name="hStatus" id="s02" value="Rent" onclick="return checkbox2();" /> Rent the property
+            </p>
+            </td>
+            <td>
+            <p class="wd5">
+            <input type="text" name="payment" id="payment" size="8" maxlength="6" />
+            <label>
+              <a title="MP">$Monthly Payment<span class="reda">*</span></a>
+            </label>
+            </p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>
+            <label>
+              <a title="MI">Monthly Income<span class="reda">*</span></a>
+            </label>
+            </p>
+            </td>
+            <td>
+            <p>
+            <input type="text" name="income" id="income" size="8" maxlength="6" />
+            </p>
+            </td>
+            </tr>
+            <tr>
+            <td class="wd6">
+            <p>
+            <label>
+              <a title="YA">Years at current location<span class="reda">*</span></a>
+            </label>
+            </p>
+            </td>
+            <td>
+            <p>
+            <input type="text" name="currYears" id="currYears" size="3" maxlength="2" />
+            </p>
+            </td>
+            </tr>
+            <tr>
+            <td>
+            <p>
+            <label>
+              <a title="PAC">Pre-authorized Code<span class="reda">*</span></a>
+            </label>
+            </p>
+            </td>
+            <td>
+            <p>
+            <input type="text" name="preCode" id="preCode" size="8" />
+            </p>
+            </td>
+            </tr>
+            </table>
+          </fieldset>
+          </td>
+          </tr>
+          <tr>
+          <td>
+          <fieldset class="f2">
+            <legend>Credit Check / Email Consent</legend>
+            <p>
+            <label class="PBI">
+              <a title="cc">I consent to have a credit check performed</a>
+            </label>
+            </p>
+            <p class="ind">
+            <input type="checkbox" name="creditCheck" id="c01" value="Yes" onclick="return checkbox3();" /> Yes
+            <input type="checkbox" name="creditCheck" id="c02" value="No" onclick="return checkbox4();" /> No
+            </p>
+            <p>
+            <label class="PBI">
+              <a title="cc">I consent to have email messages sent to me</a>
+            </label>
+            </p>
+            <p class="ind">
+            <input type="radio" name="emailConsent" id="m01" value="Yes" /> Yes
+            <input type="radio" name="emailConsent" id="m02" value="No" /> No
+            </p>
+            <p>
+            <script>
+              subdate();
+            </script>
+            &nbsp;
+            <label class="ref">
+              <a title="rf">Ref. #</a>
+            </label>
+            <input type="text" name="refNo" id="refNo" size="8" readonly />
+            </p>
+            <hr />
+            <input type="submit" value="Submit Application" />
+            <input type="reset" value="Start Over" onclick="return clearShowErrors();"/>
+            <p class="b">
+              <span class="reda">*</span> = required information
+            </p>
+          </fieldset>
+          </td>
+          <td colspan="2">
+          <fieldset class="f4">
+            <legend>Reserved - See below</legend>
+            <div class="ra" id="errorarea">
+              <p>If you submit your application with errors and/or omissions, a list of errors and/or omissions will 
+                 show here. Make the corrections and re-submit.</p>
+
+              <p>If you continue to have a problem submitting your application, make a note of the Reference No. 
+                 and call us at 1-800-010-2000.</p>
+            </div>
+          </fieldset>
+          </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+      <footer>
+        <div>
+          <ul class="footlist">
+            <li><a href="../">My zenit Account</a></li>
+            <li><a href="javascript/myscript.js">My JavaScript</a></li>
+            <li><a href="css/sitecss.css">My CSS</a></li>
+            <li><a href="honesty.html">My Honesty</a></li>
+          </ul>    
+        </div>
+        <div class="footd">
+          <script>
+            var dt=new Date(document.lastModified);   // Get document last modified date
+            document.write('This page was last updated on '+dt.toLocaleString());
+          </script>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
